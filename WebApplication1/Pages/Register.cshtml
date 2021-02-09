@@ -1,0 +1,35 @@
+﻿@page
+@model WebApplication1.Pages.RegisterModel
+@{
+}
+
+<h1>Register @Model.msg</h1>
+
+<div>
+    
+</div>
+
+
+
+<div>
+    LOGIN
+    <form asp-page-handler="Login" method="post">
+       
+        <div>
+            <label>Email:</label>
+            <div>
+                <input type="text" name="email" placeholder="Email">
+
+            </div>
+        </div>
+        <div>
+            <label>ID:</label>
+            <div>
+                <input type="text" name="pass" placeholder="Device Id">
+            </div>
+        </div>
+
+
+        <input type="submit">
+    </form>
+</div>

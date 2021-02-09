@@ -1,0 +1,28 @@
+﻿.client_container{
+    width:100%;
+    background-color:red;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+h1,h3{
+    text-align:center;
+}
+
+.option-wrapper {
+    background-color: blue;
+    padding: 5px 12px 5px 12px;
+}
+    .option-wrapper ul {
+        padding: 5px 12px 5px 12px;
+    }
+.option-wrapper ul li{
+    list-style:none;
+    list-style-type:none;
+    background-color:green;
+    padding:1px 4px 1px 4px;
+    border-radius:12px;
+    margin:4px 2px 4px 2px;
+}
+

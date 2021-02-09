@@ -1,0 +1,34 @@
+﻿@page
+@model WebApplication1.Pages.ClientPageModel
+@{
+}
+
+<div>
+    <div class="client_container">
+
+        <h1>WELCOME CLIENT</h1>
+        <h3>Here you will find everything you need for your devices</h3>
+
+        <div class="option-wrapper">
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/AddTicketPage" asp-route-deviceId="@Model.device_id"  asp-route-clientname="@Model.client_name">Add Ticket (guarantee)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/AddTicketPageNoGuarantee">Add Ticket (no guarantee)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Show Ticket</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>

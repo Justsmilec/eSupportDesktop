@@ -1,0 +1,6 @@
+Client Name: Adem
+Device ID: TI210CA
+Guarantee: True
+Priority: False
+Cost: 31
+Fatura ID: TI210CAAdemvirus

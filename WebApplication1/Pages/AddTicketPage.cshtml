@@ -1,0 +1,67 @@
+﻿@page
+@model WebApplication1.Pages.AddTicketPageModel
+@{
+}
+
+<div>
+    <h1>Add Ticket @Model.nameParam</h1>
+
+    <div class="form-container">
+       
+        <form method="post" asp-page-handler="InsertTicket">
+            <div>
+                <label>Device Type:</label>
+                <div>
+                    <label>
+                        <select  name="department" id="department">
+
+                            @{
+                              
+                              <option  value="@Model.DepartmentModels">@Model.DepartmentModels</option>
+                                               
+                            }
+                        </select>
+                    </label>
+                    
+
+                </div>
+            </div>
+            <div>
+                <label>Service:</label>
+                <div>
+                    <label>
+                        <select name="service" id="service">
+
+                            @{
+                                //DBService1 dbService = new DBService1();
+                                for (int i = 0; i < Model.ServiceModels.Count(); i++)
+                                {
+                                    string name = @Model.ServiceModels[i];
+                                    <option  value="@name">@name</option>
+
+                                }
+                            }
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label>Description:</label>
+                <div>
+                    <input type="text" name="description" placeholder="The problem..." >
+                </div>
+            </div>
+            <div>
+              
+                <div>
+                    <input type="checkbox" name="priority" value="Priority">
+                    <label for="priority">Priority</label><br>
+                </div>
+            </div>
+
+
+            <input  type="submit" />
+        </form>
+
+    </div>
+</div>

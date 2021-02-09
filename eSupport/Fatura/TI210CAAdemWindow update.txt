@@ -1,0 +1,6 @@
+Client Name: Adem
+Device ID: TI210CA
+Guarantee: True
+Priority: True
+Cost: 36.1666666666667
+Fatura ID: TI210CAAdemWindow update

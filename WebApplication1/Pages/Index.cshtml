@@ -1,0 +1,211 @@
+﻿@page
+@using WebApplication1.DBHandler;
+ @model IndexModel
+    @{
+        ViewData["Title"] = "Home page";
+    }
+
+    <div runat="server">
+
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-c26f4d6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c26f4d6" data-element_type="section">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-row">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7f2705b" data-id="7f2705b" data-element_type="column">
+                        <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                                <div class="elementor-element elementor-element-874bce7 elementor-widget elementor-widget-heading" data-id="874bce7" data-element_type="widget" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                        <h3 class="me elementor-heading-title elementor-size-default">
+                                            Looking For Online Support For Your
+                                            Laptop / Desktop or other devices ?
+
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="image-section">
+            <div class="list-wrapper">
+                <div> What we offer!!</div>
+                <div>
+                    <ul>
+
+                        @{
+                            //DBService1 dbService = new DBService1();
+                            for (int i = 0; i < Model.DepartmenModels.Count(); i++)
+                            {
+                                <li>
+                                    @Model.DepartmenModels[i].DepartmentName
+                                </li>
+                            }
+                        }
+
+
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="why-choose">
+            Why Choose Us
+        </div>
+        <div class="below-why-choose">
+            If you are looking for a Laptop/Computer service or any other devices you are on the right place!
+        </div>
+
+        <div class="mini-div-container">
+
+
+            <div class="minidiv-container">
+                <div>
+                    <div class="icon">
+                        <img src="~/images/image.png" alt="Avatar" style="width:200px">
+                    </div>
+                    <div class="title">
+                        name
+                    </div>
+                    <div class="description">
+                        This is a brief description
+                    </div>
+                </div>
+                <div>
+                    <div class="icon">
+                        <img src="~/images/image.png" alt="Avatar" style="width:200px">
+                    </div>
+                    <div class="title">
+                        name
+                    </div>
+                    <div class="description">
+                        This is a brief description
+                    </div>
+                </div>
+                <div>
+                    <div class="icon">
+                        <img src="~/images/image.png" alt="Avatar" style="width:200px">
+                    </div>
+                    <div class="title">
+                        name
+                    </div>
+                    <div class="description">
+                        This is a brief description
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-8df703f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8df703f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+            <div class="elementor-container elementor-column-gap-no">
+                <div class="elementor-row">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8109770" data-id="8109770" data-element_type="column">
+                        <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                                <div class="elementor-element elementor-element-81ce391 elementor-widget elementor-widget-heading" data-id="81ce391" data-element_type="widget" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                        <h2 class="elementor-heading-title elementor-size-default">Why Choose Us</h2>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-1fa75a3 elementor-widget elementor-widget-text-editor" data-id="1fa75a3" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                        <div class="elementor-text-editor elementor-clearfix"><p class="wow bounceInRight">If you are looking for Online Support for your Laptop / Desktop or other devices, then you are in the right place.&nbsp;</p></div>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-2709dd7 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="2709dd7" data-element_type="widget" data-widget_type="divider.default">
+                                    <div class="elementor-widget-container">
+                                        <div class="elementor-divider">
+                                            <span class="elementor-divider-separator">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <section class="elementor-section elementor-inner-section elementor-element elementor-element-b690011 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b690011" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row">
+                                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-8813dc3" data-id="8813dc3" data-element_type="column">
+                                                <div class="elementor-column-wrap elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-1360b85 elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="1360b85" data-element_type="widget" data-widget_type="icon-box.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-icon-box-wrapper">
+                                                                    <div class="elementor-icon-box-icon">
+                                                                        <span class="elementor-icon elementor-animation-">
+                                                                            <i aria-hidden="true" class="fas fa-plane-departure"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="elementor-icon-box-content">
+                                                                        <h5 class="elementor-icon-box-title">
+                                                                            <span>Customer Satisfaction</span>
+                                                                        </h5>
+                                                                        <p class="elementor-icon-box-description">Customer satisfaction is our first priority.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1212791" data-id="1212791" data-element_type="column">
+                                                <div class="elementor-column-wrap elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-9e23993 elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="9e23993" data-element_type="widget" data-widget_type="icon-box.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-icon-box-wrapper">
+                                                                    <div class="elementor-icon-box-icon">
+                                                                        <span class="elementor-icon elementor-animation-">
+                                                                            <i aria-hidden="true" class="fas fa-user-md"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="elementor-icon-box-content">
+                                                                        <h5 class="elementor-icon-box-title">
+                                                                            <span>High Skill</span>
+                                                                        </h5>
+                                                                        <p class="elementor-icon-box-description">We have highly skilled manpower for online support for your devices.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-c18a0d0" data-id="c18a0d0" data-element_type="column">
+                                                <div class="elementor-column-wrap elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-0c8a13f elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="0c8a13f" data-element_type="widget" data-widget_type="icon-box.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-icon-box-wrapper">
+                                                                    <div class="elementor-icon-box-icon">
+                                                                        <span class="elementor-icon elementor-animation-">
+                                                                            <i aria-hidden="true" class="fas fa-database"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="elementor-icon-box-content">
+                                                                        <h5 class="elementor-icon-box-title">
+                                                                            <span>Data Safety</span>
+                                                                        </h5>
+                                                                        <p class="elementor-icon-box-description">We take care about your sensitive data while attending online support.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>

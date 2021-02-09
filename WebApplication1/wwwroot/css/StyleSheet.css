@@ -1,0 +1,36 @@
+﻿.ticket-container {
+    width: 100%;
+    height:500px;
+    background-color: red;
+    overflow-y:scroll;
+}
+.search-div{
+    width = 100%;
+    height = 40px;
+    background-color:sandybrown;
+    display:flex;
+}
+.inside-container {
+    width: 100%;
+    height:120px;
+    background-color: blue;
+    display: flex;
+    flex-direction:row;
+    margin-bottom:15px;
+}
+.left-cont{
+    width:38%;
+    background-color:green;
+    height:100%;
+
+}
+.right-cont{
+    height:100%;
+    width:62%;
+    background-color:black;
+}
+.desc{
+    width:100%;
+    height:70%;
+    background-color:aqua;
+}

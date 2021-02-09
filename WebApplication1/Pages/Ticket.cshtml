@@ -1,0 +1,56 @@
+﻿@page
+@model PrivacyModel
+
+
+
+<div>
+    <h1>Ticket List</h1>
+    <div class="search-div">
+        <form method="POST" asp-page-handler="OnSearch">
+            <select name="deviceSearch" id="service">
+
+                @{
+                    //DBService1 dbService = new DBService1();
+                    for (int i = 0; i < Model.ListOfAllDevices.Count(); i++)
+                    {
+                        string name = @Model.ListOfAllDevices[i].DepartmentName;
+                        <option value="@name">@name</option>
+
+                    }
+                }
+            </select>
+
+            <input type="text" name="search" placeholder="Search"/>
+            <input type="submit"/>
+        </form>
+    </div>
+    <div class="ticket-container">
+        
+        @{
+            for (int i = 0; i < Model.listOfSolvedTicket.Count(); i++)
+            {
+                <div class="inside-container">
+                    <div class="left-cont">
+                        <div>Device: <span>@Model.listOfSolvedTicket[i].SolvedTicket.Department</span></div>
+                        <div>Service: <span>@Model.listOfSolvedTicket[i].SolvedTicket.Service</span></div>
+
+                    </div>
+                    <div class="right-cont">
+                        <div class="desc">@Model.listOfSolvedTicket[i].SolvedTicket.Description</div>
+                        <div>
+                            <form method="POST">
+                                <input type="submit"
+                                       value="Documentation"
+                                       asp-page-handler="DownloadFile" asp-route-doc=">@Model.listOfSolvedTicket[i].Documentation" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+
+
+
+    </div>
+</div>
