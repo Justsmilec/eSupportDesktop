@@ -36,12 +36,12 @@ namespace eSupport
             this.subService1 = new eSupport.SubService();
             this.label1 = new System.Windows.Forms.Label();
             this.adminLeftMenu = new System.Windows.Forms.Panel();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.staticsticBtn = new System.Windows.Forms.Button();
             this.punonjesPanelBtn = new System.Windows.Forms.Button();
             this.services_department = new System.Windows.Forms.Button();
             this.iconimage = new System.Windows.Forms.PictureBox();
-            this.logoutBtn = new System.Windows.Forms.Button();
-            this.department1 = new Department(subService1);
+            this.department1 = new eSupport.Department(this.subService1);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.adminLeftMenu.SuspendLayout();
@@ -66,6 +66,7 @@ namespace eSupport
             this.panel2.Controls.Add(this.chartsPanel1);
             this.panel2.Controls.Add(this.adminPunonjesPanel1);
             this.panel2.Controls.Add(this.subService1);
+            this.panel2.Controls.Add(this.department1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(236, 0);
@@ -102,6 +103,14 @@ namespace eSupport
             this.subService1.TabIndex = 2;
             this.subService1.Visible = false;
             // 
+            // department1
+            // 
+            this.department1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.department1.Location = new System.Drawing.Point(0, 0);
+            this.department1.Name = "department1";
+            this.department1.Size = new System.Drawing.Size(284, 350);
+            this.department1.TabIndex = 5;
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -126,6 +135,21 @@ namespace eSupport
             this.adminLeftMenu.Name = "adminLeftMenu";
             this.adminLeftMenu.Size = new System.Drawing.Size(236, 350);
             this.adminLeftMenu.TabIndex = 1;
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.Location = new System.Drawing.Point(55, 325);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(129, 34);
+            this.logoutBtn.TabIndex = 4;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // staticsticBtn
             // 
@@ -181,21 +205,6 @@ namespace eSupport
             this.iconimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconimage.TabIndex = 0;
             this.iconimage.TabStop = false;
-            // 
-            // logoutBtn
-            // 
-            this.logoutBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.logoutBtn.BackColor = System.Drawing.Color.Transparent;
-            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutBtn.Location = new System.Drawing.Point(55, 325);
-            this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(129, 34);
-            this.logoutBtn.TabIndex = 4;
-            this.logoutBtn.Text = "Logout";
-            this.logoutBtn.UseVisualStyleBackColor = false;
-            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // adminPanel
             // 
