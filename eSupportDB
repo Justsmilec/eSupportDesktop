@@ -1,0 +1,275 @@
+-- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+--
+-- Host: localhost    Database: esupport
+-- ------------------------------------------------------
+-- Server version	8.0.22
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `admintable`
+--
+
+DROP TABLE IF EXISTS `admintable`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admintable` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admintable`
+--
+
+LOCK TABLES `admintable` WRITE;
+/*!40000 ALTER TABLE `admintable` DISABLE KEYS */;
+INSERT INTO `admintable` VALUES (7,'a','a@a.a','a'),(8,'adem1','ademcani773@gmail.com','12345elb');
+/*!40000 ALTER TABLE `admintable` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `client_table`
+--
+
+DROP TABLE IF EXISTS `client_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `client_table` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `client_name` varchar(45) DEFAULT NULL,
+  `client_email` varchar(45) DEFAULT NULL,
+  `client_phonenumber` varchar(45) DEFAULT NULL,
+  `client_deviceId` varchar(45) DEFAULT NULL,
+  `ticket_list` json DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `client_table`
+--
+
+LOCK TABLES `client_table` WRITE;
+/*!40000 ALTER TABLE `client_table` DISABLE KEYS */;
+INSERT INTO `client_table` VALUES (1,'Adem','ademcani','0698455870','TI210CA',NULL),(2,'Tina','tinasaidani','0692296379','BBU12Q',NULL);
+/*!40000 ALTER TABLE `client_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `department_table`
+--
+
+DROP TABLE IF EXISTS `department_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `department_table` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `department_name` varchar(45) DEFAULT NULL,
+  `department_desc` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `department_table`
+--
+
+LOCK TABLES `department_table` WRITE;
+/*!40000 ALTER TABLE `department_table` DISABLE KEYS */;
+INSERT INTO `department_table` VALUES (54,'Computer','Laptop Service Hardware'),(70,'Phone','Phone service hardware, software , camera, update, upgrade.'),(71,'sdfsdf','sdfsdfsdf');
+/*!40000 ALTER TABLE `department_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `device_table`
+--
+
+DROP TABLE IF EXISTS `device_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `device_table` (
+  `id` int NOT NULL,
+  `deviceId` varchar(45) DEFAULT NULL,
+  `guarantee` varchar(45) DEFAULT NULL,
+  `deviceName` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `deviceId_UNIQUE` (`deviceId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `device_table`
+--
+
+LOCK TABLES `device_table` WRITE;
+/*!40000 ALTER TABLE `device_table` DISABLE KEYS */;
+INSERT INTO `device_table` VALUES (1,'TI210CA','1','Computer'),(2,'BBU12Q','0','Phone'),(3,'MY23EW','0','Computer');
+/*!40000 ALTER TABLE `device_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `fatura_table`
+--
+
+DROP TABLE IF EXISTS `fatura_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `fatura_table` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ticket` json DEFAULT NULL,
+  `payed` tinyint DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fatura_table`
+--
+
+LOCK TABLES `fatura_table` WRITE;
+/*!40000 ALTER TABLE `fatura_table` DISABLE KEYS */;
+/*!40000 ALTER TABLE `fatura_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `punonjes_table`
+--
+
+DROP TABLE IF EXISTS `punonjes_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `punonjes_table` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `phonenumber` varchar(45) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  `level` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `ticket` json DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `punonjes_table`
+--
+
+LOCK TABLES `punonjes_table` WRITE;
+/*!40000 ALTER TABLE `punonjes_table` DISABLE KEYS */;
+INSERT INTO `punonjes_table` VALUES (2,'adem','alb','sdfsdf','Computer','2','12345elb','[{\"Status\": \"Pending\", \"Service\": \"Service1\", \"Finished\": false, \"Priority\": false, \"Guarantee\": true, \"Department\": \"Computer\", \"FinishDate\": \"2021-02-21T16:01:25.1166799+01:00\", \"OpenedDate\": \"2021-02-09T16:01:25.1166021+01:00\", \"ClientModel\": {\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}, \"Description\": \"blank screen\"}, {\"Status\": \"Pending\", \"Service\": \"Service1\", \"Finished\": false, \"Priority\": false, \"Guarantee\": true, \"Department\": \"Computer\", \"FinishDate\": \"2021-02-21T16:05:14.0346746+01:00\", \"OpenedDate\": \"2021-02-09T16:05:14.0345789+01:00\", \"ClientModel\": {\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}, \"Description\": \"virus\"}]'),(3,'tina','saidani','sdf','Phone','dsf','sadfd','[]'),(4,'sdf','sdf','sdf','Computer','Ademii','sdf','[{\"Status\": \"Pending\", \"Service\": \"Service1\", \"Finished\": false, \"Priority\": true, \"Guarantee\": true, \"Department\": \"Computer\", \"FinishDate\": \"2021-02-21T16:02:21.5401636+01:00\", \"OpenedDate\": \"2021-02-09T16:02:21.5401439+01:00\", \"ClientModel\": {\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}, \"Description\": \"Window update\"}]');
+/*!40000 ALTER TABLE `punonjes_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `solvedticket_table`
+--
+
+DROP TABLE IF EXISTS `solvedticket_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `solvedticket_table` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ticket` json DEFAULT NULL,
+  `documentation` varchar(45) DEFAULT NULL,
+  `description` text,
+  `fatura` json DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `solvedticket_table`
+--
+
+LOCK TABLES `solvedticket_table` WRITE;
+/*!40000 ALTER TABLE `solvedticket_table` DISABLE KEYS */;
+INSERT INTO `solvedticket_table` VALUES (11,'{\"Status\": \"Pending\", \"Service\": \"Service1\", \"Finished\": false, \"Priority\": false, \"Guarantee\": true, \"Department\": \"Computer\", \"FinishDate\": \"2021-02-19T19:11:55.9418751+01:00\", \"OpenedDate\": \"2021-02-07T19:11:55.9418682+01:00\", \"ClientModel\": {\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"ClientEmail\": \"ademcani\", \"ClientPassword\": null, \"ClientPhonenumber\": \"0698455870\"}, \"Description\": \"hardware\"}','Adem.txt','hardware',NULL),(12,'{\"Status\": \"Pending\", \"Service\": \"Service1\", \"Finished\": false, \"Priority\": true, \"Guarantee\": true, \"Department\": \"Computer\", \"FinishDate\": \"2021-02-19T19:11:27.671239+01:00\", \"OpenedDate\": \"2021-02-07T19:11:27.6711256+01:00\", \"ClientModel\": {\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"ClientEmail\": \"ademcani\", \"ClientPassword\": null, \"ClientPhonenumber\": \"0698455870\"}, \"Description\": \"Window update\"}','test.txt','Window update',NULL),(13,'{\"Status\": \"Pending\", \"Service\": \"Service1\", \"Finished\": false, \"Priority\": false, \"Guarantee\": true, \"Department\": \"Computer\", \"FinishDate\": \"2021-02-21T16:05:14.0346746+01:00\", \"OpenedDate\": \"2021-02-09T16:05:14.0345789+01:00\", \"ClientModel\": {\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"ClientEmail\": \"ademcani\", \"ClientPassword\": null, \"ClientPhonenumber\": \"0698455870\"}, \"Description\": \"virus\"}','Adem.txt','virus',NULL),(14,'{\"Status\": \"Pending\", \"Service\": \"Service1\", \"Finished\": false, \"Priority\": false, \"Guarantee\": true, \"Department\": \"Computer\", \"FinishDate\": \"2021-02-21T16:05:14.0346746+01:00\", \"OpenedDate\": \"2021-02-09T16:05:14.0345789+01:00\", \"ClientModel\": {\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"ClientEmail\": \"ademcani\", \"ClientPassword\": null, \"ClientPhonenumber\": \"0698455870\"}, \"Description\": \"virus\"}','Adem.txt','virus','{\"Payed\": false, \"costTotal\": 31.0, \"faturaFilename\": \"TI210CAAdemvirus\"}'),(15,'{\"Status\": \"Pending\", \"Service\": \"Service1\", \"Finished\": false, \"Priority\": false, \"Guarantee\": true, \"Department\": \"Computer\", \"FinishDate\": \"2021-02-21T16:05:14.0346746+01:00\", \"OpenedDate\": \"2021-02-09T16:05:14.0345789+01:00\", \"ClientModel\": {\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"ClientEmail\": \"ademcani\", \"ClientPassword\": null, \"ClientPhonenumber\": \"0698455870\"}, \"Description\": \"virus\"}','Adem.txt','virus','{\"Payed\": false, \"costTotal\": 31.0, \"faturaFilename\": \"TI210CAAdemvirus\"}'),(16,'{\"Status\": \"Pending\", \"Service\": \"Service1\", \"Finished\": false, \"Priority\": true, \"Guarantee\": true, \"Department\": \"Computer\", \"FinishDate\": \"2021-02-21T16:02:21.5401636+01:00\", \"OpenedDate\": \"2021-02-09T16:02:21.5401439+01:00\", \"ClientModel\": {\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"ClientEmail\": \"ademcani\", \"ClientPassword\": null, \"ClientPhonenumber\": \"0698455870\"}, \"Description\": \"Window update\"}','test.txt','Window update','{\"Payed\": false, \"costTotal\": 36.166666666666664, \"faturaFilename\": \"TI210CAAdemWindow update\"}');
+/*!40000 ALTER TABLE `solvedticket_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `subservice_table`
+--
+
+DROP TABLE IF EXISTS `subservice_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `subservice_table` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  `cost` int DEFAULT NULL,
+  `time_required` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `subservice_table`
+--
+
+LOCK TABLES `subservice_table` WRITE;
+/*!40000 ALTER TABLE `subservice_table` DISABLE KEYS */;
+INSERT INTO `subservice_table` VALUES (3,'Service1','Computer',31,12),(4,'Service2','Phone',12,124),(5,'Service3','Phone',12,20),(6,'Service4','Phone',12,20),(7,'Service5','Phone',34,4),(8,'ServiceTest','sdfsdf',1,12);
+/*!40000 ALTER TABLE `subservice_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ticket_table`
+--
+
+DROP TABLE IF EXISTS `ticket_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ticket_table` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `department` varchar(45) DEFAULT NULL,
+  `service` varchar(45) DEFAULT NULL,
+  `description` longtext,
+  `priority` tinyint DEFAULT NULL,
+  `guarantee` tinyint DEFAULT NULL,
+  `clientModel` json DEFAULT NULL,
+  `finished` tinyint DEFAULT NULL,
+  `openedDateTime` varchar(50) DEFAULT NULL,
+  `delegatedPunonjes` json DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  `finishDate` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ticket_table`
+--
+
+LOCK TABLES `ticket_table` WRITE;
+/*!40000 ALTER TABLE `ticket_table` DISABLE KEYS */;
+INSERT INTO `ticket_table` VALUES (74,'Computer','Service1','computer service hardware',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 11:04:16 AM',NULL,NULL,'2/19/2021 11:04:16 AM'),(75,'Computer','Service1','computer service Software',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 11:06:25 AM',NULL,NULL,'2/19/2021 11:06:25 AM'),(76,'Computer','Service1','program',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 11:29:02 AM',NULL,NULL,'2/19/2021 11:29:02 AM'),(77,'Computer','Service1','camera problem',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 12:10:06 PM',NULL,NULL,'2/19/2021 12:10:06 PM'),(78,'Computer','Service1','screen problem',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 12:10:33 PM',NULL,NULL,'2/19/2021 12:10:33 PM'),(79,'Computer','Service1','black screen',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 12:12:16 PM',NULL,NULL,'2/19/2021 12:12:16 PM'),(80,'Computer','Service1','windows update',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 12:12:31 PM',NULL,NULL,'2/19/2021 12:12:31 PM'),(81,'Computer','Service1','upgrade',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 12:18:41 PM',NULL,NULL,'2/19/2021 12:18:41 PM'),(82,'Computer','Service1','dfgfd',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 12:19:01 PM',NULL,NULL,'2/19/2021 12:19:01 PM'),(83,'Computer','Service1','dfgdfgdf',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/7/2021 12:19:26 PM',NULL,NULL,'2/19/2021 12:19:26 PM'),(87,'Computer','Service1','upgrade',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/9/2021 3:38:14 PM',NULL,NULL,'2/21/2021 3:38:14 PM'),(88,'Phone','Service5','camera ',0,1,'{\"ClientID\": \"BBU12Q\", \"ClientName\": \"Tina\", \"TicketList\": null, \"ClientEmail\": \"tinasaidani\", \"ClientPhonenumber\": \"0692296379\"}',0,'2/9/2021 3:40:32 PM',NULL,NULL,'2/13/2021 3:40:32 PM'),(89,'Phone','Service3','android update',1,1,'{\"ClientID\": \"BBU12Q\", \"ClientName\": \"Tina\", \"TicketList\": null, \"ClientEmail\": \"tinasaidani\", \"ClientPhonenumber\": \"0692296379\"}',0,'2/9/2021 3:41:02 PM',NULL,NULL,'2/13/2021 3:41:02 PM'),(90,'Computer','Service1','blank screen',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/9/2021 4:01:25 PM',NULL,NULL,'2/21/2021 4:01:25 PM'),(91,'Computer','Service1','Window update',1,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/9/2021 4:02:21 PM',NULL,NULL,'2/21/2021 4:02:21 PM'),(92,'Computer','Service1','virus',0,1,'{\"ClientID\": \"TI210CA\", \"ClientName\": \"Adem\", \"TicketList\": null, \"ClientEmail\": \"ademcani\", \"ClientPhonenumber\": \"0698455870\"}',0,'2/9/2021 4:05:14 PM',NULL,NULL,'2/21/2021 4:05:14 PM');
+/*!40000 ALTER TABLE `ticket_table` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-02-10 14:34:52
