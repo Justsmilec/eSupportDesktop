@@ -349,6 +349,7 @@ namespace eSupport
             this.deleteSelected.TabIndex = 3;
             this.deleteSelected.Text = "Delete";
             this.deleteSelected.UseVisualStyleBackColor = true;
+            this.deleteSelected.Click += new System.EventHandler(this.deleteSelected_Click);
             // 
             // addPunonjesButton
             // 
@@ -383,6 +384,7 @@ namespace eSupport
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

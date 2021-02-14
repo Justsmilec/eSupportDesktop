@@ -10,8 +10,11 @@ namespace eSupport
     {
         public static string LoggedinPunonjes { get; set; }
         public static string LoggedinPunonejesEmail { get; set; }
+        public static string LoggedinPunonjesPassword { get; set; }
 
         public static string SelectedDepartment { get; set; }
         public static System.Windows.Forms.Panel Form1 { get; set; }
+
+        public static string SelectedPunonjes { get; set; }
     }
 }

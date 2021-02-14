@@ -25,12 +25,25 @@ namespace eSupport
         {
             Helper.LoggedinPunonjes = this.usernameField.Text;
             Helper.LoggedinPunonejesEmail = this.emailField.Text;
+            
             Console.WriteLine("---: " + Helper.LoggedinPunonjes);
-            this.paneltoHide.Hide();
-            this.paneltoShow.Show();
-            this.usernameField.Text = "";
-            this.emailField.Text = "";
-            this.passwordField.Text = "";
+            DBPunonjes dBPunonjes = new DBPunonjes();
+            if(dBPunonjes.CountifFound(this.usernameField.Text,this.emailField.Text,this.passwordField.Text) == 1)
+            {
+                this.paneltoHide.Hide();
+                this.paneltoShow.Show();
+                this.usernameField.Text = "";
+                this.emailField.Text = "";
+                this.passwordField.Text = "";
+
+            }
+
+            else
+            {
+                MessageBox.Show("Nuk mund te hyni si punonjes");
+            }
+            
+            
         }
     }
 }

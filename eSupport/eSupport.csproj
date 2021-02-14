@@ -82,6 +82,7 @@
     <Compile Include="ChartsPanel.Designer.cs">
       <DependentUpon>ChartsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="CryptoHandler.cs" />
     <Compile Include="DBAdmin.cs" />
     <Compile Include="DBDevice.cs" />
     <Compile Include="DBFatura.cs" />

@@ -36,34 +36,37 @@ namespace eSupport
             listOfTicket = dBPunonjes.getAllTicketPerPunonjes(Helper.LoggedinPunonjes, Helper.LoggedinPunonejesEmail);
             List<Ticket> priorityTicket = listOfTicket;
             List<Ticket> finalTicket = new List<Ticket>();
-            for(int i = 0; i < listOfTicket.Count(); i++)
+           if(listOfTicket != null)
             {
-                System.Diagnostics.Debug.WriteLine("***** :: " + listOfTicket[i].Priority.ToString());
-
-                if (listOfTicket[i].Priority.ToString() == "True")
+                for (int i = 0; i < listOfTicket.Count(); i++)
                 {
-                    finalTicket.Add(listOfTicket[i]);
-                }
-                
-            }
-            for (int i = 0; i < listOfTicket.Count(); i++)
-            {
+                    System.Diagnostics.Debug.WriteLine("***** :: " + listOfTicket[i].Priority.ToString());
 
-                if (listOfTicket[i].Priority.ToString() == "False")
+                    if (listOfTicket[i].Priority.ToString() == "True")
+                    {
+                        finalTicket.Add(listOfTicket[i]);
+                    }
+
+                }
+                for (int i = 0; i < listOfTicket.Count(); i++)
                 {
-                    finalTicket.Add(listOfTicket[i]);
+
+                    if (listOfTicket[i].Priority.ToString() == "False")
+                    {
+                        finalTicket.Add(listOfTicket[i]);
+                    }
+
                 }
-                
-            }
 
-            for(int i = 0;i<finalTicket.Count();i++)
-            {
-                TicketDisplayBox testTicket = new TicketDisplayBox(finalTicket[i], flowLayoutPanel2);
+                for (int i = 0; i < finalTicket.Count(); i++)
+                {
+                    TicketDisplayBox testTicket = new TicketDisplayBox(finalTicket[i], flowLayoutPanel2);
 
-                this.flowLayoutPanel2.Controls.Add(testTicket.returnPanel());
+                    this.flowLayoutPanel2.Controls.Add(testTicket.returnPanel());
+                }
+                this.ticketContainerPanel.Show();
+                this.label1.Hide();
             }
-            this.ticketContainerPanel.Show();
-            this.label1.Hide();
 
             
         }

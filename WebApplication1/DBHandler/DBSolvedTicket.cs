@@ -194,6 +194,23 @@ namespace WebApplication1.DBHandler
                 return Count;
             }
         }
+
+
+        public Boolean isSolved(string Id)
+        {
+            List<SolvedTicketModel> solvedTicket = getAllService();
+            
+            for(int i = 0;i<solvedTicket.Count();i++)
+            {
+                if(solvedTicket[i].SolvedTicket.ClientModel.ClientID == Id.ToUpper())
+                {
+                    return true;
+                }
+
+            }
+            return false;
+            
+        }
         //Update statement
         public void Update()
         {

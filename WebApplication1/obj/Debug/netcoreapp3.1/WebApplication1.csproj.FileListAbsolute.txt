@@ -55,3 +55,12 @@ C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\obj\Debug\netcore
 C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\Antlr3.Runtime.dll
 C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\ExpressionEvaluator.dll
 C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\GSF.Core.dll
+C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Pages\Contact.cshtml.g.cs
+C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\OpenPop.dll
+C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\MailBee.NET.dll
+C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\System.Management.dll
+C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+C:\Users\User.WINDOWS-VCRGH5N\Desktop\eSupport\WebApplication1\bin\Debug\netcoreapp3.1\AE.Net.Mail.dll

@@ -40,9 +40,21 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AE.Net.Mail": {
+              "target": "Package",
+              "version": "[1.7.10, )"
+            },
             "GSF.Core": {
               "target": "Package",
               "version": "[2.3.302, )"
+            },
+            "MailBee.NET": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.10.1, )"
             },
             "MySql.Data": {
               "target": "Package",
@@ -51,6 +63,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "OpenPop.NET": {
+              "target": "Package",
+              "version": "[2.0.6.1120, )"
             }
           },
           "imports": [

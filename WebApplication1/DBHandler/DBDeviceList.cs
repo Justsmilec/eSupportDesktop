@@ -114,9 +114,9 @@ namespace WebApplication1.DBHandler
 
         
         //Count statement
-        public int Count(string email, string phonenumber)
+        public int isFound(string id)
         {
-            string query = "SELECT Count(*) FROM Client_table where client_email= '" + email + "' AND client_phonenumber='" + phonenumber + "'";
+            string query = "SELECT Count(*) FROM device_table where deviceId = '" + id + "'";
             int Count = -1;
 
             if (this.OpenConnection() == true)

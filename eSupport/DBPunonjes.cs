@@ -49,19 +49,12 @@ namespace eSupport
             }
             catch (MySqlException ex)
             {
-                //When handling errors, you can your application's response based 
-                //on the error number.
-                //The two most common error numbers when connecting are as follows:
-                //0: Cannot connect to server.
-                //1045: Invalid user name and/or password.
+
                 switch (ex.Number)
                 {
                     case 0:
-                        //MessageBox.Show("Cannot connect to server.  Contact administrator");
                         break;
-
                     case 1045:
-                        //MessageBox.Show("Invalid username/password, please try again");
                         break;
                 }
                 return false;
@@ -143,6 +136,8 @@ namespace eSupport
         }
 
 
+       
+
         public void removedelegateTicket(string name,string email, Ticket ticket)
         {
             List<Ticket> list = new List<Ticket>();
@@ -204,6 +199,27 @@ namespace eSupport
                 cmd.ExecuteNonQuery();
                 this.CloseConnection();
             }
+        }
+        //When a punonjes is deleted and there are ticket for that punonjes then all the ticket go to the left number of other punonjes
+        public void ticketDistribution(string departmentname, List<Ticket> ticket)
+        {
+            System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(ticket));
+            List<PunonjesModel> listOfPunonjesOnDepartment = new List<PunonjesModel>();
+            listOfPunonjesOnDepartment = this.listOfPunonjesOnDepartment(departmentname);
+
+            Random randomTicket = new Random();
+                for (int i = 0; i < listOfPunonjesOnDepartment.Count(); i++)
+                {
+                    int random = randomTicket.Next(ticket.Count());
+                    delegateTicket(listOfPunonjesOnDepartment[i].name, ticket[random]);
+                    ticket.Remove(ticket[random]);
+                    if (ticket.Count() == 0)
+                        break;
+                    if (i == listOfPunonjesOnDepartment.Count() - 1)
+                        i = 0;
+                }
+            
+            
         }
 
         //Update finish time by number of days
@@ -353,6 +369,78 @@ namespace eSupport
                 return null;
             }
         }
+
+        public List<PunonjesModel> listOfPunonjesOnDepartment(string department)
+        {
+            string query = "SELECT * FROM Punonjes_table where department = '"+department+"'";
+            List<PunonjesModel> list = new List<PunonjesModel>();
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    List<Ticket> ticketModel = JsonConvert.DeserializeObject<List<Ticket>>(rdr["ticket"].ToString());
+                    PunonjesModel punonjesModel = new PunonjesModel
+                    {
+                        name = rdr["name"].ToString(),
+                        email = rdr["email"].ToString(),
+                        phonenumber = rdr["phonenumber"].ToString(),
+                        department = rdr["department"].ToString(),
+                        level = rdr["level"].ToString(),
+                        TicketModel = ticketModel
+
+
+                    };
+                    list.Add(punonjesModel);
+                }
+                this.CloseConnection();
+                return list;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public PunonjesModel returnPunonjes(string name,string email)
+        {
+            string query = "SELECT * FROM Punonjes_table where name = '" + name + "' AND email = '"+email+"'";
+            PunonjesModel list = new PunonjesModel();
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    List<Ticket> ticketModel = JsonConvert.DeserializeObject<List<Ticket>>(rdr["ticket"].ToString());
+                    PunonjesModel punonjesModel = new PunonjesModel
+                    {
+                        name = rdr["name"].ToString(),
+                        email = rdr["email"].ToString(),
+                        phonenumber = rdr["phonenumber"].ToString(),
+                        department = rdr["department"].ToString(),
+                        level = rdr["level"].ToString(),
+                        TicketModel = ticketModel
+
+
+                    };
+                    list =  punonjesModel;
+                }
+                this.CloseConnection();
+                return list;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public List<Ticket> getAllTicketPerPunonjes(string name,string email)
         {
             string query = "SELECT ticket FROM Punonjes_table where name = '"+name+"' AND email = '"+email+"'";
@@ -447,17 +535,47 @@ namespace eSupport
 
         }
 
-        //Select statement
 
-
-        //Backup
-        public void Backup()
+        //Delete statement
+        public void Delete(string selectedName,string selectedEmail)
         {
+            string query = "Delete from punonjes_table where name = '" + selectedName + "' AND email = '"+selectedEmail+"'";
+
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
+
         }
 
-        //Restore
-        public void Restore()
+
+
+        public int CountifFound(string name, string email, string password)
         {
+            string query = "SELECT Count(*) FROM punonjes_table where name= '" + name + "' AND email='" + email + "' AND password='" + CryptoHandler.EncodePasswordToBase64(password) + "'";
+            int Count = -1;
+
+            //Open Connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //ExecuteScalar will return one value
+                Count = int.Parse(cmd.ExecuteScalar() + "");
+
+                //close Connection
+                this.CloseConnection();
+
+                return Count;
+            }
+            else
+            {
+                return Count;
+            }
         }
     }
 }

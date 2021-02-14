@@ -15,6 +15,9 @@ namespace eSupport
     {
         public List<string> department_list = new List<string>();
         public string[] department_List;
+        public string punonjesSelected;
+        public string punonjesSelectedEmail;
+        public string punonjesDepartment;
         DBService dBService = new DBService();
         DBPunonjes dBPunonjes = new DBPunonjes();
         public AdminPunonjesPanel()
@@ -53,7 +56,7 @@ namespace eSupport
                 phonenumber = this.PhoneField.Text,
                 department = this.QualificationField.Text,
                 level = this.LevelField.Text,
-                password = this.PasswordField.Text,
+                password = CryptoHandler.EncodePasswordToBase64(this.PasswordField.Text),
 
             };
             dBPunonjes.Insert(punonjesModel);
@@ -129,5 +132,68 @@ namespace eSupport
                 this.listView1.Items.Add(listViewItem);
             }
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.listView1.SelectedItems.Count > 0)
+            {
+                Console.WriteLine("row : " + listView1.SelectedIndices[0]);
+
+                ListViewItem item = listView1.SelectedItems[0];
+                punonjesSelected = item.SubItems[1].Text;
+                punonjesSelectedEmail = item.SubItems[2].Text;
+                punonjesDepartment = item.SubItems[5].Text;
+                Console.WriteLine("Selected row : " + punonjesSelected);
+                this.deleteSelected.Enabled = true;
+                this.detailsButton.Enabled = true;
+                Helper.SelectedPunonjes = punonjesSelected;
+            }
+            else
+            {
+                this.deleteSelected.Enabled = false;
+                this.detailsButton.Enabled = false;
+            }
+        }
+
+        private void deleteSelected_Click(object sender, EventArgs e)
+        {
+            this.listView1.Items.Clear();
+            List<PunonjesModel> list = null;
+            PunonjesModel pM = dBPunonjes.returnPunonjes(punonjesSelected, punonjesSelectedEmail);
+
+            if(pM.TicketModel != null)
+            {
+                dBPunonjes.ticketDistribution(punonjesDepartment, pM.TicketModel);
+
+            }
+            dBPunonjes.Delete(this.punonjesSelected, this.punonjesSelectedEmail);
+
+            list = dBPunonjes.getAllService();
+            Console.WriteLine("Length " + list.Count());
+            for (int i = 0; i < list.Count(); i++)
+            {
+                string[] str = new string[7];
+                str[0] = (i + 1).ToString();
+                str[1] = list[i].name;
+                str[2] = list[i].email;
+                str[3] = list[i].phonenumber;
+                str[4] = list[i].level;
+                str[5] = list[i].department;
+                if (list[i].TicketModel != null)
+                {
+                    str[6] = list[i].TicketModel.Count().ToString();
+                }
+                else
+                {
+                    str[6] = "---";
+
+                }
+                ListViewItem listViewItem = new ListViewItem(str);
+                listView1.Items.Add(listViewItem);
+
+            }
+        }
+
+       
     }
 }
