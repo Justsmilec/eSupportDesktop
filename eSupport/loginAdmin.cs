@@ -30,34 +30,27 @@ namespace eSupport
 
         private void adminLoginButton_Click(object sender, EventArgs e)
         {
-            /*DBAdmin dBConnect = new DBAdmin();
+            DBAdmin dBConnect = new DBAdmin();
             int found = dBConnect.Count(this.usernameField.Text, this.emailField.Text, this.passwordField.Text);
             Console.Write("----: " + found);
-            if (found == 0)
-            {
-                //Not found
-                /*
-                if (EmailIsValid(this.emailField.Text) && this.usernameField.Text != "" && this.emailField.Text != "" && this.passwordField.Text != "")
-                {
-
-                    dBConnect.Insert(this.usernameField.Text, this.emailField.Text, this.passwordField.Text);
+            if (found == 1)
+             {
+                    //found
+                    this.paneltoHide.Hide();
+                    this.paneltoShow.Show();
                     //clear all fields after submit
                     this.usernameField.Text = "";
                     this.emailField.Text = "";
                     this.passwordField.Text = "";
-
-                }
-                */
-            /*
+ 
             }
-            else if (found == 1)
+            else if (found == 0)
             {
                 //Found --> jump to admin page
-               
+                MessageBox.Show("Nuk mund te hyni si admin");
 
-            }*/
-            this.paneltoHide.Hide();
-            this.paneltoShow.Show();
+            }
+            
 
         }
     }

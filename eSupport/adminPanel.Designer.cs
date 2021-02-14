@@ -42,6 +42,7 @@ namespace eSupport
             this.services_department = new System.Windows.Forms.Button();
             this.iconimage = new System.Windows.Forms.PictureBox();
             this.department1 = new eSupport.Department(this.subService1);
+
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.adminLeftMenu.SuspendLayout();

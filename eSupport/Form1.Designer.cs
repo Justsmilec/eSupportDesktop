@@ -36,8 +36,8 @@ namespace eSupport
             this.adminButton = new System.Windows.Forms.Button();
             this.iconimage = new System.Windows.Forms.PictureBox();
             this.adminPanel1 = new eSupport.adminPanel();
-            this.loginPunonjes1 = new eSupport.loginPunonjes(this.panel1, this.punonjesPanel1);
-            this.loginAdmin1 = new eSupport.loginAdmin(this.panel1, this.adminPanel1);
+            this.loginPunonjes1 = new loginPunonjes(this.panel1,this.punonjesPanel1);
+            this.loginAdmin1 = new loginAdmin(this.panel1,this.adminPanel1);
             this.panel1.SuspendLayout();
             this.leftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconimage)).BeginInit();

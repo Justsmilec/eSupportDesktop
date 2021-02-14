@@ -43,7 +43,7 @@ namespace eSupport
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.OliveDrab;
+            this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.panel1.Controls.Add(this.adminLoginButton);
             this.panel1.Controls.Add(this.passwordField);
             this.panel1.Controls.Add(this.passwordLabel);
@@ -61,7 +61,7 @@ namespace eSupport
             // adminLoginButton
             // 
             this.adminLoginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.adminLoginButton.Location = new System.Drawing.Point(175, 272);
+            this.adminLoginButton.Location = new System.Drawing.Point(183, 277);
             this.adminLoginButton.Name = "adminLoginButton";
             this.adminLoginButton.Size = new System.Drawing.Size(75, 23);
             this.adminLoginButton.TabIndex = 31;
@@ -72,7 +72,7 @@ namespace eSupport
             // passwordField
             // 
             this.passwordField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passwordField.Location = new System.Drawing.Point(103, 224);
+            this.passwordField.Location = new System.Drawing.Point(111, 229);
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(225, 20);
             this.passwordField.TabIndex = 30;
@@ -82,7 +82,7 @@ namespace eSupport
             // 
             this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(100, 198);
+            this.passwordLabel.Location = new System.Drawing.Point(108, 203);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(56, 13);
             this.passwordLabel.TabIndex = 29;
@@ -91,7 +91,7 @@ namespace eSupport
             // emailField
             // 
             this.emailField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.emailField.Location = new System.Drawing.Point(103, 162);
+            this.emailField.Location = new System.Drawing.Point(111, 167);
             this.emailField.Name = "emailField";
             this.emailField.Size = new System.Drawing.Size(225, 20);
             this.emailField.TabIndex = 28;
@@ -100,7 +100,7 @@ namespace eSupport
             // 
             this.emailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(100, 136);
+            this.emailLabel.Location = new System.Drawing.Point(108, 141);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(35, 13);
             this.emailLabel.TabIndex = 27;
@@ -109,7 +109,7 @@ namespace eSupport
             // usernameField
             // 
             this.usernameField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.usernameField.Location = new System.Drawing.Point(103, 102);
+            this.usernameField.Location = new System.Drawing.Point(111, 107);
             this.usernameField.Name = "usernameField";
             this.usernameField.Size = new System.Drawing.Size(225, 20);
             this.usernameField.TabIndex = 26;
@@ -118,7 +118,7 @@ namespace eSupport
             // 
             this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(100, 72);
+            this.usernameLabel.Location = new System.Drawing.Point(108, 77);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(58, 13);
             this.usernameLabel.TabIndex = 25;
@@ -130,7 +130,7 @@ namespace eSupport
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(163, 29);
+            this.label1.Location = new System.Drawing.Point(171, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 13);
